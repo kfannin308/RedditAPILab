@@ -22,10 +22,12 @@ namespace RedditAPILab.Controllers
         }
         public IActionResult DisplayReddit()
         {
-            HttpClient httpClient = _httpClientFactory.CreateClient();
-            const string redditApiUrl = "https://www.reddit.com/r/aww/.json";
-            var apiResponse = httpClient.GetFromJsonAsync<RedditSimpleResponse>(redditApiUrl).GetAwaiter().GetResult();
-            return View(apiResponse);
+           HttpClient httpClient = _httpClientFactory.CreateClient();
+           const string redditApiUrl = "https://www.reddit.com/r/aww/.json";
+           var apiResponse = httpClient.GetFromJsonAsync<RedditSimpleResponse>(redditApiUrl).GetAwaiter().GetResult();
+           return View(apiResponse);
+           
+                
         }
 
         public IActionResult Privacy()
